@@ -1,0 +1,304 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Extraction Tools - Trader File Generator</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/general/base.css">
+        <link rel="stylesheet" href="css/general/variable.css">
+        <link rel="stylesheet" href="css/general/header.css">
+
+        <link rel="stylesheet" href="css/tools/numberGenerator.css">
+        <link rel="stylesheet" href="css/tools/traderFileGenerator/generator.css">
+        <link rel="stylesheet" href="css/tools/input.css">
+        <link rel="stylesheet" href="css/general/checkbox.css">
+        <link rel="stylesheet" href="css/general/collapse.css">
+
+        <script src="js/tools/traderFileGenerator/formChanger.js"></script>
+        <script src="js/tools/traderFileGenerator/colorpicker.js"></script>
+        <script src="js/tools/traderFileGenerator/iconSelector.js"></script>
+        <script src="js/collapse.js"></script>
+        <script src="js/tools/numberGenerator.js"></script>
+        <script src="js/tools/traderFileGenerator/classnameGenerator.js"></script>
+        <script src="js/tools/traderFileGenerator/generalInput.js"></script>
+        <script src="js/tools/traderFileGenerator/expansionJsonGenerator.js"></script>
+    </head>
+    <body>
+        <div class="header" id="nav">
+            <a href="index.html" class="header-img"></a>
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link">Tools</a>
+                </div>
+                <div class="nav-list">
+                    <a href="https://discord.gg/HTkVuBUSjJ" class="nav-link">Join Now!</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>Welcome to Trader File Generator - by Sam</h1>
+            <div class="main-container " id="js-generate-json-first-part">
+                <div class="sub-container-col">
+                    <div class="instruction-wrapper">
+                        <h2 class="subheader">Instructions</h2>
+                        <p class="instuctions">This Trader File Generator only works for the expansion Market for now.
+                            This generator is split in 2 parts. This means first you will select the base data for the Trader File 
+                            like the name, color, version etc. After that you can add all your Items. If you dont fill out something a placeholder
+                            value will be set instead. 
+                        </p>
+                        <a class="link" target="_blank" href="https://github.com/salutesh/DayZ-Expansion-Scripts/wiki/%5BServer-Hosting%5D-Market-Categories-Settings">i need help</a>
+                    </div>
+                </div>
+                <div class="sub-container-col extra-margin extra-line-top">
+                    <h2 class="subheader">Generate your trader file!</h2>
+                    <div class="data-container">
+                        <div class="data-wrapper-half">
+                            <div class="form-group">
+                                <input class="px-input" type="text" name="DisplayName" id="js-displayname" placeholder="DisplayName">
+                                <label class="floating-label" for="DisplayName">DisplayName</label>
+                            </div>
+                        </div>
+                        <div class="data-wrapper-small">
+                            <div class="form-group">
+                                <input class="px-input" type="number" name="Version" id="js-version" placeholder="Version (Number Only)">
+                                <label class="floating-label" for="Version">Version</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-container">
+                        <div class="data-wrapper-small spacing extra-margin">
+                            <label for="Color" class="label"> Select a color</label>
+                            <input class="px-input-color" type="color" name="Color" id="js-color" placeholder="Color">
+                            <input type="text" class="px-input" id="hexCode" placeholder="HEX Color Code">
+                            <button type="button" class="normal-button" id="applyButton">Apply</button>
+                        </div>
+                        <div class="data-wrapper-small extra-margin">
+                            <label for="icon-selector" class="label"> Select a icon</label>
+                            <select name="icon-selector" id="js-icon-selector">
+                                <option value="" selected disabled hidden>Please select an Icon</option>
+                            </select>
+                        </div>
+                        <div class="data-wrapper-small">
+                            <div class="form-group">
+                                <input class="px-input" type="number" name="StockPercent" id="js-stock-percent" min='0' max='75' placeholder="Init Stock Percent (0 - 75)">
+                                <label class="floating-label" for="StockPercent">Init Stock Percent</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="submit-btn extra-margin" id="js-start-gen">Start Generating</button>
+                </div>
+            </div>
+            <div class="main-container hide" id="js-generate-json-second-part">
+                <div class="reset-button hide" id="js-reset-form-btn">
+                    <button class="normal-button" id="js-reset-form">Reset form</button>
+                </div>
+                <div class="sub-container-col">
+                    <div class="instruction-wrapper collapse-container">
+                        <h3 class="subheader collapse-btn" title="Click to show and hide" id="js-faq-coallapse">FAQ <span class="" id="icon-angle">&#x276F;</span></h3>
+                        <div class="instuctions extra-instruction-styling collapsable-element collapse-height collapsed" id="js-faq-coallapse-container">
+                            In this section, we will add your items to the trader file. You will find four new elements to generate your trader file:
+                            <br><br>
+
+                            <h3 class="subheader underline">1. Number generator</h3>
+                            The Number Generator is a powerful tool that creates random numbers within a range defined by you. When using the multi-item-generator or single-item-generator, look for the "Auto Generate" button in some input fields. Clicking this button will generate a random number for each classname entry in the "ClassName" field. <br> <br>
+                            
+                            <span class="underline">Encountering issues? Here are some tips:</span> <br><br>
+                            - Ensure you've set the minimum and maximum values for the number generator.
+                            - Make sure you have already entered a classname in the respective input field.
+                            <br><br>
+
+                            <h3 class="subheader underline">2. Multi-item-generator</h3>
+                            The multi-item-generator allows you to add multiple classnames at once. It's a convenient way to quickly include various items. Keep in mind that some options like SellPricePercent, QuantityPercent, SpawnAttachments, and Variants are not available in this generator. For such options, refer to the single-item-generator.
+                            <br><br>
+
+                            <h3 class="subheader underline">3. Single-item-generator</h3>
+                            With the single-item-generator, you can focus on generating a single classname while having access to all available options. This gives you more flexibility and customization possibilities compared to the multi-item-generator.
+                            <br><br>
+
+                            <h3 class="subheader underline">4. Deleted Generated Classnames</h3>
+                            To manage your created classnames, use the "Deleted Generated Classnames" section. Simply click on a classname entry to remove it from the list.
+                            <br><br>
+
+                            <h3 class="subheader underline">Notice</h3>
+                            If any of the fields are left empty, both generators will automatically utilize the Fallback data schema provided below:
+                            <br><br>
+
+                            <h3 class="subheader underline">Fallback schema</h3>
+                            m_Version: 1, <br>
+                            DisplayName: "General goods",<br>
+                            Icon: "Deliver",<br>
+                            Color: "800080",<br>
+                            IsExchange: 0,<br>
+                            InitStockPercent: 75.0<br>
+                            <br><br>
+                            MaxPriceThreshold: 100,<br>
+                            MinPriceThreshold: 1,<br>
+                            SellPricePercent: 1,<br>
+                            MaxStockThreshold: 100,<br>
+                            MinStockThreshold: 1,<br>
+                            QuantityPercent: -1,<br>
+                            SpawnAttachments: [],<br>
+                            Variants: [],<br>
+                        </div>
+                        <a class="link" target="_blank" href="https://github.com/salutesh/DayZ-Expansion-Scripts/wiki/%5BServer-Hosting%5D-Market-Categories-Settings">Expansion Market general settings</a>
+                    </div>
+                </div>
+                <div class="sub-container-col">
+                    <h2 class="subheader">Number Generator</h2>
+                    <div class="data-wrapper-huge">
+                        <div class="number-generator-container">
+                            <div class="number-data-wrapper">
+                                <div class="number-col-general">
+                                    <label class="label">Result:</label>
+                                    <textarea class="input-textarea number-textarea" name="generated-number" id="js-number-generator-result" rows="1" readonly></textarea>
+                                    <input type="hidden" name="hidden-generated-number" id="js-hidden-number-generator-result" value=>
+                                </div>
+                                <div class="number-col-general">
+                                    <div class="number-col-general">
+                                        <label class="label" for="">Min value</label>
+                                        <input type="number" class="px-input" id="js-number-min-val" value=1>
+                                    </div>
+                                    <div class="number-col-general">
+                                        <label class="label" for="">Max value</label>
+                                        <input type="number" class="px-input" id="js-number-max-val" value=10>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="normal-button" id="js-number-generator-start">Generate random Number</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-container-col extra-line-top">
+                    <h2 class="subheader collapse-btn" id="js-multi-item-collapse">Multi-item-generator <span class="rotate90-d" id="icon-angle-multi">&#x276F;</span></h2>
+                    <div class="multi-item-container" id="js-multi-item-collapse-container">
+                        <div class="multi-item-wrapper">
+                            <div class="header-button-wrapper">
+                                <h3 class="subheader">ClassName*</h3>
+                                <label class="small-container-checkbox" title="Includes quotes in generated JSON">
+                                    Keep "" ?
+                                    <input type="checkbox" id="js-mulit-classname-keep-quotes">
+                                    <span class="small-checkmark"></span>
+                                </label>
+                            </div>
+                            <textarea class="input-textarea multi-item-textarea" name="classnames" id="js-multi-classname" placeholder="ClassNames - always seperate each entry with a ,"></textarea>
+                        </div>
+                        <div class="multi-item-wrapper">
+                            <div class="header-button-wrapper">
+                                <h3 class="subheader">MaxPriceThreshold</h3>
+                                <button class="small-button" id="js-generate-numbers-MaxPriceThreshold">Auto Generate</button>
+                            </div>
+                            <textarea class="input-textarea multi-item-textarea" name="MaxPriceThreshold" id="js-multi-MaxPriceThreshold" placeholder="MaxPriceThreshold - always seperate each entry with a ,"></textarea>
+                        </div>
+                        <div class="multi-item-wrapper">
+                            <div class="header-button-wrapper">
+                                <h3 class="subheader">MinPriceThreshold</h3>
+                                <button class="small-button" id="js-js-generate-numbers-MinPriceThreshold">Auto Generate</button>
+                            </div>
+                            <textarea class="input-textarea multi-item-textarea" name="MinPriceThreshold" id="js-multi-MinPriceThreshold" placeholder="MinPriceThreshold - always seperate each entry with a ,"></textarea>
+                        </div>
+                        <div class="multi-item-wrapper">
+                            <div class="header-button-wrapper">
+                                <h3 class="subheader">MaxStockThreshold</h3>
+                                <button class="small-button" id="js-js-generate-numbers-MaxStockThreshold">Auto Generate</button>
+                            </div>
+                            <textarea class="input-textarea multi-item-textarea" name="MaxStockThreshold" id="js-multi-MaxStockThreshold" placeholder="MaxStockThreshold - always seperate each entry with a ,"></textarea>
+                        </div>
+                        <div class="multi-item-wrapper">
+                            <div class="header-button-wrapper">
+                                <h3 class="subheader">MinStockThreshold</h3>
+                                <button class="small-button" id="js-js-generate-numbers-MinStockThreshold">Auto Generate</button>
+                            </div>
+                            <textarea class="input-textarea multi-item-textarea" name="MinStockThreshold" id="js-multi-MinStockThreshold" placeholder="MinStockThreshold - always seperate each entry with a ,"></textarea>
+                        </div>
+                        <div class="button-container">
+                            <button class="normal-button button" id="js-generate-multi-item">Generate Classnames</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-container-col extra-line-top">
+                    <h2 class="subheader collapse-btn" id="js-single-item-collapse">Single Item generator <span class="rotate90-d" id="icon-angle-single">&#x276F;</span></h2>
+                    <div class="data-container collapse-height" id="js-single-item-collapse-container">
+                        <div class="data-wrapper-huge">
+                            <div class="form-group-small">
+                                <div class="over-input-button extra-top">
+                                    <label class="small-container-checkbox" title="Includes quotes in generated JSON">
+                                        Keep "" ?
+                                        <input type="checkbox" id="js-single-classname-keep-quotes">
+                                        <span class="small-checkmark"></span>
+                                    </label>
+                                </div>
+                                <input class="px-input" type="text" name="ClassName" id="js-single-classname" placeholder="ClassName">
+                                <label class="floating-label" for="ClassName">ClassName</label>
+                            </div>
+                            <div class="form-group-small">
+                                <div class="over-input-button">
+                                    <button class="small-button break-height" id="">Auto Generate</button>
+                                </div>
+                                <input class="px-input" type="number" name="MaxPriceThreshold" id="js-single-MaxPriceThreshold" placeholder="MaxPriceThreshold">
+                                <label class="floating-label" for="MaxPriceThreshold">MaxPriceThreshold</label>
+                            </div>
+                            <div class="form-group-small">
+                                <div class="over-input-button">
+                                    <button class="small-button break-height" id="">Auto Generate</button>
+                                </div>
+                                <input class="px-input" type="number" name="MinPriceThreshold" id="js-single-MinPriceThreshold" placeholder="MinPriceThreshold">
+                                <label class="floating-label" for="MinPriceThreshold">MinPriceThreshold</label>
+                            </div>
+                            <div class="form-group-small">
+                                <input class="px-input" type="number" name="SellPricePercent" id="js-single-SellPricePercent" placeholder="SellPricePercent" value=-1>
+                                <label class="floating-label" for="SellPricePercent">SellPricePercent</label>
+                            </div>
+                            <div class="form-group-small">
+                                <input class="px-input" type="number" name="MaxStockThreshold" id="js-single-MaxStockThreshold" placeholder="MaxStockThreshold">
+                                <label class="floating-label" for="MaxStockThreshold">MaxStockThreshold</label>
+                            </div>
+                            <div class="form-group-small">
+                                <input class="px-input" type="number" name="MinStockThreshold" id="js-single-MinStockThreshold" placeholder="MinStockThreshold">
+                                <label class="floating-label" for="MinStockThreshold">MinStockThreshold</label>
+                            </div>
+                            <div class="form-group-small">
+                                <input class="px-input" type="number" name="QuantityPercent" id="js-single-QuantityPercent" placeholder="QuantityPercent" value=-1>
+                                <label class="floating-label" for="QuantityPercent">QuantityPercent</label>
+                            </div>
+                            <div class="single-generator-textarea-container">
+                                <div class="header-textarea-wrapper">
+                                    <label class="label" for="">Variants</label>
+                                    <textarea class="input-textarea single-item-textarea" name="Variants" id="js-single-Variants" placeholder="Variants - always seperate each entry with a ,"></textarea>
+                                </div>
+                                <div class="header-textarea-wrapper">
+                                    <label class="label" for="">SpawnAttachments</label>
+                                    <textarea class="input-textarea single-item-textarea" name="SpawnAttachments" id="js-single-SpawnAttachments" placeholder="SpawnAttachments - always seperate each entry with a ,"></textarea>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button class="normal-button button" id="js-generate-single-item">Generate Classname</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-container-col extra-line-top hide" id="js-generated-classnames-container">
+                    <h2 class="subheader">Delete Generated Classnames</h2>
+                    <div class="classname-container">
+                        <div class="classname-wrapper" id="js-classname-wrapper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="action-btn-container hide" id="js-action-btn-container">
+                    <div class="action-btn-wrapper">
+                        <button class="normal-button remove-margin" type="button" id="js-download-btn"><i class="fa fa-download icon-btn"></i> Download</button>
+                        <button class="normal-button remove-margin" type="button" id="js-copy-btn"><i class="fa fa-clipboard icon-btn"></i>Copy</button>
+                        <input type="hidden" name="generated-json-name" id="js-generated-json-name" value>
+                        <input type="hidden" name="generated-json-data" id="js-generated-json-data" value>
+                    </div>
+                </div>
+                <h3 id="js-generated-json-name-data"></h3>
+                <div class="json-result" id="js-generated-json-container"></div>
+            </div>
+        </div>
+    </body>
+</html>
