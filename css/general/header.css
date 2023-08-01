@@ -1,0 +1,48 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    background-color: var(--c-bg);
+    color: white;
+    font-family: bebas;
+    z-index: 9999;
+    height: 7%;
+    align-items: center;
+    outline: solid 1px var(--c-bg-transparent);
+}
+
+.header-img{
+    background-image: url("/img/ex_w.png");
+    width: 3em;
+    height: 3em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 3em;
+}
+
+.nav-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+}
+
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: .3s;
+}
+
+.nav-list:hover > :not(:hover) {
+    opacity: 0.6;
+    transition: .3s;
+}
+

@@ -1,0 +1,39 @@
+.about-us-main{
+    
+}
+.about-us-content{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+}
+
+.about-us-main-header{
+    
+}
+
+.about-us-header{
+    font-size: 3em;
+    font-weight: 600;
+    color: white;
+}
+
+.about-us-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.txt-img-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.preview-img{
+    width: 45%;
+}
+
+.img{
+    width: 100%;
+}

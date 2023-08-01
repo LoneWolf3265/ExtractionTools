@@ -1,0 +1,17 @@
+#loading-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+#loading-overlay.active {
+    display: flex;
+}
+
+.gif {
+    max-height: 20em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}

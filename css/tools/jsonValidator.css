@@ -1,0 +1,84 @@
+.error {
+    background-color: #FFCCCC;
+}
+
+.highlight {
+    background-color: #FF9999;
+}
+
+.status-box-container {
+    min-height: fit-content;
+    margin-bottom: -3em;
+}
+
+.status-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 4em;
+}
+
+.validator-input-container {
+    min-height: fit-content;
+}
+
+.valdiator-instructions-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0em auto 1em auto;
+}
+
+.textarea-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0em auto 2em auto;
+}
+
+.button-container {
+    width: 100%;
+    margin: 0em auto 2em auto;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em auto 1em auto;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.textarea-valid {
+    background-color: var(--c-bg-valid);
+}
+
+.textarea-invalid {
+    background-color: var(--c-bg-invalid);
+}
+
+.output-container{
+    align-items: flex-start;
+}
+
+.style-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+    background-color: var(--c-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.hide{
+    display: none;
+}

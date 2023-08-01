@@ -1,0 +1,119 @@
+.data-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.data-wrapper-huge {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.data-wrapper-half {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.data-wrapper-33 {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.data-wrapper-small {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.form-group {
+    position: relative;
+    margin: 2em 0em;
+    width: 99%;
+}
+
+.form-group-small {
+    position: relative;
+    margin: 1em 0em;
+    width: 99%;
+}
+
+.floating-label {
+    position: absolute;
+    top: -20px;
+    left: 3px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 3;
+    font-size: 1.1em;
+}
+
+.label {
+    font-size: 1.1em; 
+}
+.px-input-color{
+    width: 50%;
+    height: 1.3em;
+    font-size: 1em;
+    padding: 0.2em;
+    height: 4em;
+    border: 1px solid var(--c-dark-purple);
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.px-input {
+    position: relative;
+    z-index: 4;
+    color: white;
+    background-color: var(--c-bg);
+    text-decoration: none;
+    border: none;
+    border: solid 1px var(--c-bg);
+    border-bottom: solid 1px var(--c-dark-purple);
+    width: 100%;
+    height: 1.3em;
+    font-size: 1em;
+    padding: 0.2em;
+}
+
+.px-input::placeholder {
+    color: gray;
+}
+
+.px-input:focus {
+    border: none;
+    outline: none;
+    border: solid 1px var(--c-dark-purple);
+}
+
+.px-input[type=number]::-webkit-outer-spin-button,
+.px-input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.px-input:focus + .floating-label,
+.px-input:not(:placeholder-shown) + .floating-label {
+    opacity: 1;
+  transform: translateY(0);
+}
+
+.input-textarea {
+    color: white;
+    background-color: var(--c-bg-transparent);
+    resize: none;
+    border-color: var(--c-dark-purple);
+    outline-color: var(--c-dark-purple);
+    line-height: 14px;
+}
+
+.input-textarea:focus{
+    outline-color: var(--c-semidark-purple);
+}

@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "bebas";
+    src: url("/font/BebasNeue-Regular.ttf") format('truetype');
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--c-main);
+    color: white;
+    letter-spacing: 1px;
+    font-family: bebas;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    font-family: bebas;
+    color: var(--c-white);
+    letter-spacing: 1px;
+}
+
+pre {
+    color: var(--c-white);
+}
+
+.section-element {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(21, 21, 21, 1) 4%, rgba(12, 12, 12, 1) 10%, rgba(0, 0, 0, 1) 18%);
+}
+
+.section-header {
+    font-size: 4em;
+    font-weight: 700;
+    color: white;
+    align-self: center;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 1300px;
+    margin: auto;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    width: 100%;
+}
+
+.split-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.general-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    margin: auto;
+}
+
+.general-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.general-container-style {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--c-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.general-button-container {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.general-button-container-style {
+    background-color: var(--c-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subheader {
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.big-button {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+    font-family: bebas;
+    outline: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 0.3em 0.5em;
+    height: 3em;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1em;
+    box-shadow: var(--box-shadow);
+}
+
+.big-button:hover {
+    background-color: white;
+    border: none;
+    border: solid 1px var(--c-purple);
+    color: black;
+}
+
+.normal-button {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+    font-family: bebas;
+    outline: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 0.1em 0.3em;
+    height: 2em;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1em;
+    box-shadow: var(--box-shadow);
+}
+
+.normal-button:hover {
+    background-color: white;
+    border: none;
+    border: solid 1px var(--c-purple);
+    color: black;
+}
+
+.small-button {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+    font-family: bebas;
+    outline: none;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0.1em 0.5em;
+    height: 2em;
+    width: fit-content;
+    box-shadow: var(--box-shadow);
+}
+
+.small-button:hover {
+    background-color: white;
+    border: none;
+    border: solid 1px var(--c-purple);
+    color: black;
+}

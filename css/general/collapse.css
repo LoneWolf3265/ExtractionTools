@@ -1,0 +1,43 @@
+.collapse-container {
+    background-color: var(--c-bg-transparent);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    transition: height 5s ease;
+}
+
+.collapse-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: solid 1px var(--c-dark-purple);
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+.collapse-btn:hover {
+    color: var(--c-dark-purple);
+    background-color: var(--c-bg-transparent);
+}
+
+.collapsable-element {
+    max-height: 100em;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.rotatable-icon {
+    transition: transform 0.3s ease;
+}
+
+.rotate90-d {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.collapsed {
+    max-height: 0em;
+    transition: max-height 0.5s ease;
+}
