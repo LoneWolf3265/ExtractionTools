@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DayZ Extraction</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/general/base.css">
+        <link rel="stylesheet" href="css/general/variable.css">
+        <link rel="stylesheet" href="css/general/header.css">
+
+        <link rel="stylesheet" href="css/tools/json.css">
+        <link rel="stylesheet" href="css/tools/upload.css">
+        <link rel="stylesheet" href="css/general/switch.css">
+        <link rel="stylesheet" href="css/logs/log.css">
+        <link rel="stylesheet" href="css/general/loadingscreen.css">
+        <link rel="stylesheet" href="css/general/checkbox.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="js/log.js"></script>
+        <script src="js/loadingscreen.js"></script>
+        <script src="js/tools/resetForm.js"></script>
+        <script src="js/tools/getDataFromKey.js"></script>
+        <script src="js/tools/getAndSetKeys.js"></script>
+        <script src="js/tools/jsonExtract.js"></script>
+        <script src="js/tools/switch.js"></script>
+        <script src="js/tools/actionButtons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+    </head>
+    <body>
+        <div class="header" id="nav">
+            <a href="index.html" class="header-img"></a>
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link">Tools</a>
+                </div>
+                <div class="nav-list">
+                    <a href="https://discord.gg/HTkVuBUSjJ" class="nav-link">Join Now!</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1 class= "main-header">Welcome to extract key Data - by Sam</h1>
+            <div class="split">
+                <div class="split-container form-container">
+                    <div class="loadingscreen" id="loading-overlay">
+                        <img class ="gif" src="img/extraction-anim.gif" alt="Loading Indicator">
+                    </div>
+                    <form action="#" name="main-form" id="main-form">
+                        <div class="data-container-wrapper" id="js-first-form">
+                            <div class="data-container">
+                                <h2 class="subheader">Start by uploading valid JSON files</h2>
+                                <div class="switch-wrapper">
+                                    <p class="gray-out first-label" id="js-fist-switch-label">Other JSON</p>
+                                    <label class="switch center-switch">
+                                        <input type="checkbox" checked id="js-switch-upload-data-type">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <p class="second-label" id="js-second-switch-label">Dayz Json file (Trader file)</p>
+                                </div>
+                            </div>
+                            <div class="fileUpload">
+                                <input type="file" class="upload" name="json" id="js-json-upload" multiple required>
+                                <span id="js-json-upload-span" >Upload JSON(s)</span>
+                            </div>
+                            <button class="big-button" type="button" id="js-check-uploaded-files">Start Extracting</button>
+                        </div>
+
+                        <div class="second-form data-container-wrapper hide" id="js-second-form">
+                            <div class="button-container">
+                                <button type="button" class= "small-button" id="js-reset-to-first-form">Restart</button>
+                            </div>
+                            <div class="data-container">
+                                <h3 class="subheader">Select the Keys you want Data extracted of</h3>
+                                <div class="checkbox-container" id="js-keys-container">
+                                </div>
+                                <h3 class="subheader">Do you want to Merge the resulting Json?</h3>
+                                <label class="container-checkbox">
+                                    Yes, i want to Merge it!
+                                    <input type="checkbox" id="js-merge-resulting-json">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <h3 class="subheader">Do you want to add the Names of the keys to the resulting JSON?</h3>
+                                <label class="container-checkbox">
+                                    Yes, i want to add the key names!
+                                    <input type="checkbox" id="js-add-key-names">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <button class="big-button" type="button" id="js-check-selected Keys">Start Extracting Data</button>
+                        </div>
+
+                        <div class="third-form data-container-wrapper hide" id="js-third-form">
+                            <div class="data-container">
+                                <h3 class="subheader">Thank you for using extract key data - by Sam</h3>
+                                <button type="button" class="small-button" id="js-reset-to-first-form-2">Upload a new Json</button>
+                                <button type="button" class="small-button" id="js-reset-to-key-selection">Select different keys</button>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="jsonData" id = "js-form-json-data" value>
+                        <input type="hidden" name="allKeys" id = "js-form-json-all-keys" value>
+                    </form>
+                </div>
+                <div class="split-container">
+                    <div class="log-container">
+                        <div class="log-wrapper">
+                            <h3 class="log-header">Logs:</h3>
+                            <div class="logs" id="js-logs-container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-btn-container hide" id="js-action-btn-container">
+                <div class="action-btn-wrapper">
+                    <button class="small-button" type="button" id="js-download-all-btn"><i class="fa fa-download icon-btn"></i> Download All</button>
+                    <button class="small-button" type="button" id="js-copy-all-btn"><i class="fa fa-clipboard icon-btn"></i>Copy All</button>
+                    <input type="hidden" name="extracted-data-filename" id="js-extracted-data-filename" value>
+                    <input type="hidden" name="extracted-data-final" id="js-extracted-data-final" value=>
+                    <input type="hidden" name="extracted-data-merge-status" id="js-extracted-data-merge-status" value>
+                </div>
+            </div>
+            <div class="json-content-container" id="js-json-data-container"></div>
+        </div>
+    </body>
+</html>
