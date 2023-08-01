@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>DayZ Extraction</title>
+        <title>Extraction Tools</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,8 +10,82 @@
         <link rel="stylesheet" href="css/general/base.css">
         <link rel="stylesheet" href="css/general/variable.css">
         <link rel="stylesheet" href="css/general/header.css">
+        <link rel="stylesheet" href="css/tools/toolsOverview.css">
     </head>
     <body>
-        HelloWold!
+        <div class="header" id="nav">
+            <a href="/index.html" class="header-img"></a>
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <a href="/index.html" class="nav-link">Tools</a>
+                </div>
+                <div class="nav-list">
+                    <a href="https://discord.gg/HTkVuBUSjJ" class="nav-link">Join Now!</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1>Welcome to DayZ Extraction Tools</h1>
+            <div class="main-container">
+                <div class="big-card-container">
+                    <div class="big-card-style" onclick="window.location.href='{{ path('app_tools_json') }}';">
+                        <div class="big-card-wrapper">
+                            <div class="big-card-title-wrapper">
+                                <p class="card-title">Key extractor</p> 
+                            </div>
+                            <div class="card-subtext-wrapper">
+                                <div class="card-subtext-header">
+                                    Upload JSON files - choose keys - extract
+                                </div>
+                                <div class="card-subtext">
+                                    Easily upload one or multiple JSON files and effortlessly extract values from specific keys of your choice. Seamlessly merge the data into a single file or maintain multiple files as needed. Take advantage of convenient features like copying the results to your clipboard or downloading them hassle-free.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="try-out-button-wrapper">
+                            <button class="normal-button">Try it out!</button>
+                        </div>
+                    </div>
+
+                    <div class="big-card-style" onclick="window.location.href='{{ path('app_tools_json_validator') }}';">
+                        <div class="big-card-wrapper">
+                            <div class="big-card-title-wrapper">
+                                <p class="card-title">JSON Validator</p> 
+                            </div>
+                            <div class="card-subtext-wrapper">
+                                <div class="card-subtext-header">
+                                    Paste JSON - check structure - validate
+                                </div>
+                                <div class="card-subtext">
+                                    Easily validate your JSON data by pasting it into our JSON Validator. Instantly determine whether your JSON is valid or not. In case of any errors, our tool will pinpoint the exact location of the issue, helping you identify and rectify the problem with ease. 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="try-out-button-wrapper">
+                            <button class="normal-button">Try it out!</button>
+                        </div>
+                    </div>
+
+                    <div class="big-card-style" onclick="window.location.href='{{ path('app_tools_json_generator_expansion') }}';">
+                        <div class="big-card-wrapper">
+                            <div class="big-card-title-wrapper">
+                                <p class="card-title">Trader File Generator</p> 
+                            </div>
+                            <div class="card-subtext-wrapper">
+                                <div class="card-subtext-header">
+                                    Create - Edit - generate
+                                </div>
+                                <div class="card-subtext">
+                                    Design your custom Trader File effortlessly, with the power to modify every value. Say goodbye to invalid JSON structures and incorrect key names. Our user-friendly tool ensures seamless generation, allowing you to copy or download your tailor-made Trader File instantly.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="try-out-button-wrapper">
+                            <button class="normal-button">Try it out!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
