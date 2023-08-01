@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Extraction Tools - JSON Validator</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/general/base.css">
+        <link rel="stylesheet" href="css/general/variable.css">
+        <link rel="stylesheet" href="css/general/header.css">
+
+        <link rel="stylesheet" href="css/tools/input.css">
+	    <link rel="stylesheet" href="css/tools/jsonValidator.css">
+
+        <script src="js/tools/jsonValidator.js"></script>
+    </head>
+    <body>
+        <div class="header" id="nav">
+            <a href="index.html" class="header-img"></a>
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link">Tools</a>
+                </div>
+                <div class="nav-list">
+                    <a href="https://discord.gg/HTkVuBUSjJ" class="nav-link">Join Now!</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1>Welcome to JSON Validator - by Sam</h1>
+            <div class="style-wrapper">
+                <div class="general-container status-box-container hide" id="status-box">
+                    <div class="general-wrapper status-box-wrapper">
+                        <h3 class="status-text subheader">JSON is:
+                            <span id="js-json-status"></span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="split">
+                    <div class="split-container">
+                        <div class="general-container validator-input-container">
+                            <div class="general-wrapper">
+                                <div class="valdiator-instructions-wrapper">
+                                    <h3 class="subheader">Instruction</h3>
+                                    <p class="instruction-text">
+                                        Start by pasting your JSON in the Textarea below. 
+                                                                        Continue by clicking validate JSON.
+                                    </p>
+                                </div>
+                                <div class="textarea-input-container">
+                                    <textarea class="input-textarea" id="inputTextArea" rows="20" cols="50"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-container">
+                        <div class="general-container">
+                            <div class="general-wrapper output-container hide" id="js-output-container">
+                                <h3 class="subheader">Error in JSON</h3>
+                                <pre id="errorTextArea"></pre>
+                                <h3 class="subheader">Reason</h3>
+                                <p id="error-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="general-button-container button-container">
+                    <div class="button-wrapper">
+                        <button class="big-button" id="js-validate-json">Validate JSON</button>
+                    </div>
+                </div>
+            </div>
+	    </div>
+    </body>
+</html>
