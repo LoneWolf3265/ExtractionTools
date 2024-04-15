@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Extraction Tools - Trader File Generator</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/general/base.css">
+        <link rel="stylesheet" href="css/general/variable.css">
+        <link rel="stylesheet" href="css/general/header.css">
+        
+
+        <link rel="stylesheet" href="css/tools/input.css">
+        <link rel="stylesheet" href="css/general/checkbox.css">
+        <link rel="stylesheet" href="css/general/collapse.css">
+	    <link rel="stylesheet" href="css/tools/jsonValidator.css">
+        <link rel="stylesheet" href="css/logs/log.css">
+        <link rel="stylesheet" href="css/tools/anomalyRenamer/anomaly.css">
+        <script src="js/tools/anomalyRenamer/anomaly.js"></script>
+</head>
+<body>
+    <div class="header" id="nav">
+        <a href="index.html" class="header-img"></a>
+        <div class="nav-wrapper">
+            <div class="nav-list">
+                <a href="index.html" class="nav-link">Tools</a>
+            </div>
+            <div class="nav-list">
+                <a href="https://discord.gg/HTkVuBUSjJ" target="_blank" class="nav-link">Join Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>Welcome to Anomaly JSON converter - by Sam</h1>
+        <div class="style-wrapper">
+            <div class="split">
+                <div class="split-container">
+                    <div class="general-container validator-input-container">
+                        <div class="general-wrapper">
+                            <div class="valdiator-instructions-wrapper">
+                                <h3 class="subheader">Instruction</h3>
+                                <p class="instruction-text">
+                                    Start by copy pasting your whole json here:
+                                </p>
+                            </div>
+                            <div class="textarea-input-container">
+                                <textarea class="input-textarea" id="inputTextArea" rows="20" cols="50" placeholder=
+'{
+    "Objects": [
+        {
+        "name": "Anomaly_Gravi_Idle",
+        "pos": [3562.357421875, 20.880123138427736, 636.934326171875],
+        "ypr": [0.0, 0.0, -0.0],
+        "scale": 1.0,
+        "enableCEPersistency": 0
+        }
+    ]
+}'></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-container">
+                    <div class="general-container">
+                        <div class="valdiator-instructions-wrapper">
+                            <h3 class="subheader">Results</h3>
+                            <p class="instruction-text">
+                                your results will be shown here:
+                            </p>
+                        </div>
+                        <div class="general-wrapper output-container" id="js-output-container">
+                            <div class="textarea-output-container">
+                                <textarea class="input-textarea" id="outputTextArea" rows="20" cols="80" readonly></textarea>
+                            </div>
+
+                            <div class="util-button-wrapper hide" id="util-button-wrapper">
+                                <div class="over-input-button">
+                                    <button class="normal-button break-height" id="js-result-copy">Copy to clipboard</button>
+                                </div>
+                                <div class="over-input-button">
+                                    <button class="normal-button break-height" id="js-result-download">Download json</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="valdiator-instructions-wrapper">
+                <h3 class="subheader">Options & Translations</h3>
+            </div>
+            <div class="data-container">
+                <div class="data-wrapper-half">
+                    <div class="data-input-wrapper-70">
+                        <div class="form-group">
+                            <input class="px-input" type="text" name="comment" id="js-comment" placeholder="Add Comment">
+                            <label class="floating-label" for="comment">Comment</label>
+                        </div>
+                    </div>
+                    <div class="data-input-wrapper-70">
+                        <div class="form-group">
+                            <input class="px-input" type="number" name="tier" id="js-tier" placeholder="Add Tier number">
+                            <label class="floating-label" for="tier">tier</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-wrapper-half">
+                    <div class="textarea-translation">
+                    <p>Translations:</p>
+                    <textarea class="input-textarea" id="textarea-translation" rows="10" cols="50">
+{
+    "Anomaly_Gravi_Idle": "Gravi",
+    "Anomaly_Electra_Idle": "Electra",
+    "Anomaly_Kisel_Idle": "Kisel",
+    "Anomaly_Jarka_Idle": "Jarka"
+}</textarea>
+                </div>
+            </div>
+        </div>  
+            <div class="general-button-container button-container">
+                <div class="button-wrapper">
+                    <button class="big-button" id="js-transform-json">Transform JSON</button>
+                </div>
+            </div>
+            
+        </div>
+</body>
+</html>

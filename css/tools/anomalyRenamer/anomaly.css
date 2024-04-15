@@ -1,0 +1,36 @@
+.main {
+    width: 1400px;
+}
+
+.data-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.data-wrapper-half {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.data-input-wrapper-70 {
+    width: 70%;
+}
+
+.style-wrapper {
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.util-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 1em 0em -2em 0em;
+}
+
+.hide {
+    display: none;
+}
