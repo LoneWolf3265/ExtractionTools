@@ -1,0 +1,22 @@
+.form-group-row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.form-group-row label {
+    width: 13em;
+    align-self: center;
+}
+
+.form-group-row input {
+    width: 8em;
+}
+
+.data-input-wrapper-90 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 90%;
+}
