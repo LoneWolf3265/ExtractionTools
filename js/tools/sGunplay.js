@@ -104,16 +104,21 @@ function generateConfig() {
     let controlKickMin = document.getElementById("js-controlKick-min").value;
     let controlKickMax = document.getElementById("js-controlKick-max").value;
 
-    let stabilityX =  generateNumber(stabilityXMin, stabilityXMax);
-    let stabilityY =  generateNumber(stabilityYMin, stabilityYMax);
-    let misalignmentX =  generateNumber(misalignmentXMin, misalignmentXMax);
-    let misalignmentY =  generateNumber(misalignmentYMin, misalignmentYMax);
-    let controlKick =  generateNumber(controlKickMin, controlKickMax);
+    let stabilityX = 0;
+    let stabilityY = 0;
+    let misalignmentX = 0; 
+    let misalignmentY = 0;
+    let controlKick = 0;
 
     let combinedString = '';
     
     jsonArray.forEach((obj) => {
         if (obj) {
+            stabilityX =  generateNumber(stabilityXMin, stabilityXMax);
+            stabilityY =  generateNumber(stabilityYMin, stabilityYMax);
+            misalignmentX =  generateNumber(misalignmentXMin, misalignmentXMax);
+            misalignmentY =  generateNumber(misalignmentYMin, misalignmentYMax);
+            controlKick =  generateNumber(controlKickMin, controlKickMax);
             combinedString += generateSingleConfig(obj, extend, stabilityX, stabilityY, misalignmentX, misalignmentY, controlKick) + '\n\n';
         } else {
             console.error("className is undefined or null for object:", obj);
