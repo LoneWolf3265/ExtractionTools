@@ -155,7 +155,7 @@ function transformJSON() {
 }
 
 function generateCacheSpawn(perc, num){
-    let number = 0;
+    let number = 1;
 
     let possibleNumber = num * perc;
     if (possibleNumber >= 0 && num >= possibleNumber) {
