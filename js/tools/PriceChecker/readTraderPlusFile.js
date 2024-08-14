@@ -127,6 +127,7 @@ function mainPriceCompare(json){
                             "ValidSchema": details.validSchema,
                             "Schema": details.str,
                         };
+                        break;
                     case 4:
                         tempProduct = {
                             "Type": "Problem",
@@ -136,6 +137,7 @@ function mainPriceCompare(json){
                             "ValidSchema": details.validSchema,
                             "Schema": details.str,
                         };
+                        break;
                     case 5:
                         tempProduct = {
                             "Type": "Warning",
@@ -145,6 +147,7 @@ function mainPriceCompare(json){
                             "ValidSchema": details.validSchema,
                             "Schema": details.str,
                         };
+                        break;
                     case 6:
                         tempProduct = {
                             "Type": "Critical",
@@ -154,6 +157,7 @@ function mainPriceCompare(json){
                             "ValidSchema": details.validSchema,
                             "Schema": details.str,
                         };
+                        break;
                     case 1:
                         if (!details.validSchema) {
                             tempProduct = {
@@ -165,6 +169,7 @@ function mainPriceCompare(json){
                                 "Schema": details.str,
                             };
                         }
+                        break;
                     default:
                         break;
                 }
