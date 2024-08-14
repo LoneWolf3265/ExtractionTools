@@ -9,6 +9,8 @@ const messageType = {
     "eventend": "event",
     "saved": "save",
     "update": "save",
+    "warning": "save",
+    "OK": "done",
 };
 
 function appendLog(message, type) {

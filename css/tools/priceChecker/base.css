@@ -1,0 +1,98 @@
+.json-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+    background-color: var(--c-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+.style-wrapper {
+    width: 95%;
+    align-self: center;
+    padding-bottom: 1em;
+}
+.style-wrapper .generic-stats {
+    padding-bottom: 1em;
+}
+
+.issue-box{
+
+}
+
+.critical {
+    border-left: solid 3px red;
+    border-bottom: solid 2px red;
+    border-bottom-left-radius: 5px;
+}
+
+.warning {
+    border-left: solid 3px yellow;
+    border-bottom: solid 2px yellow;
+    border-bottom-left-radius: 5px;
+}
+
+.problem {
+    border-left: solid 3px orange;
+    border-bottom: solid 2px orange;
+    border-bottom-left-radius: 5px;
+}
+
+.unsortet {
+    border-left: solid 3px grey;
+    border-bottom: solid 2px grey;
+    border-bottom-left-radius: 5px;
+}
+
+.ok {
+    border-left: solid 3px green;
+    border-bottom: solid 2px green;
+    border-bottom-left-radius: 5px;
+}
+
+.issue-box h2{
+    text-decoration: underline;
+    padding-left: 0em;
+    padding-left: 0.5em;
+}
+
+.issue-box h3{
+    
+}
+
+.issue-box p {
+    padding-left: 0.5em;
+}
+
+.issue-box .category {
+    padding-left: 1em;
+}
+
+.item-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.item-box .left{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-box .right{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3em;
+}
+
+.item-box pre {
+    margin: 0.21em;
+}
+
+.extra-space {
+    margin-bottom: 1em;
+}
+
+.action-btn-wrapper{
+    width: 18%;
+}
