@@ -1,0 +1,225 @@
+.json-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+    background-color: var(--c-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+.style-wrapper {
+    width: 95%;
+    align-self: center;
+    padding-bottom: 1em;
+}
+.style-wrapper .generic-stats {
+    padding-bottom: 1em;
+}
+
+.split-view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    /* border: solid 1px red; */
+}
+
+.split-view .timeline{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    /* border: solid 1px green; */
+    
+}
+
+.split-view .groupUser{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    /* border: solid 1px blue; */
+    
+}
+
+.entry-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.entry{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    overflow: hidden;
+}
+
+.entry-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.entry-info{
+    display: flex;
+    flex-direction: column;
+    width: 4em;
+}
+
+.entry-info .buy{
+    color: white;
+    background-color: red;
+    text-align: center;
+    border: solid 1px white;
+}
+
+.entry-info .sell{
+    color: white;
+    background-color: darkgreen;
+    text-align: center;
+    border: solid 1px white;
+}
+
+.entry-user {
+    display: flex;
+    align-self: center;
+}
+
+.icon-angle {
+    align-self: center;
+    margin-right: 1em;
+}
+
+.entry-content{
+    border-top: dashed 1px white;
+}
+
+.entry-items{
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.entry-items .left{
+    margin-right: 2em;
+}
+
+.entry-items .right{
+    margin: 0em;
+}
+
+.entry-items .right pre{
+    margin: 0.2em;
+}
+
+.entry-location {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.entry-location .left {
+    margin-right: 1em;
+}
+
+.entry-location .right pre {
+    margin: 0em;
+}
+
+.entry-money{
+    display: flex;
+    color: white;
+    background-color: rgb(1, 52, 1);
+    width: 99.7%;
+    text-align: center;
+    border: solid 1px white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stats-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: dashed 1px white;
+    padding-bottom: 0.5em;
+}
+
+.user-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.stat-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stat-entry .small-button{
+    width: 5em;
+    height: 2em;
+    margin: 0em;
+}
+
+.stat-entry .left {
+    width: 9em;
+}
+
+.stat-entry pre {
+    width: 25em;
+}
+
+.show-history-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px white;
+    margin-top: 1em;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    cursor: pointer;
+}
+
+.trading-history {
+    margin-top: 1em;
+    padding-top: 1em;
+    
+}
+
+.green {
+    background-color: rgb(1, 52, 1);
+    border: solid 1px white;
+    color: white;
+}
+
+.care {
+    background-color: rgb(1, 52, 1);
+    border: solid 1px red;
+    color: white;
+}
+
+.red{
+    color: white;
+    background-color: red;
+    border: solid 1px white;
+}
+
+.stats-content {
+    overflow: hidden;
+}

@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Extraction Tools - TraderPlus Log Viewer</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/general/base.css">
+        <link rel="stylesheet" href="css/general/variable.css">
+        <link rel="stylesheet" href="css/general/header.css">
+
+        <link rel="stylesheet" href="css/general/collapse.css">
+        <link rel="stylesheet" href="css/tools/json.css">
+        <link rel="stylesheet" href="css/tools/upload.css">
+        <link rel="stylesheet" href="css/general/switch.css">
+        <link rel="stylesheet" href="css/logs/log.css">
+        <link rel="stylesheet" href="css/tools/traderPlusLog/base.css">
+        <link rel="stylesheet" href="css/general/loadingscreen.css">
+        <link rel="stylesheet" href="css/general/checkbox.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="js/collapse.js"></script>
+        <script src="js/log.js"></script>
+        <script src="js/loadingscreen.js"></script>
+        
+        <script src="js/tools/traderPlusLog/resetForm.js"></script>
+        <script src="js/tools/traderPlusLog/actionBtn.js"></script>
+        <script src="js/tools/traderPlusLog/htmlElements.js"></script>
+        <script src="js/tools/traderPlusLog/readLog.js"></script>
+        <script src="js/tools/traderPlusLog/init.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+    </head>
+    <body>
+        <div class="header" id="nav">
+            <a href="index.html" class="header-img"></a>
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <a href="index.html" class="nav-link">Tools</a>
+                </div>
+                <div class="nav-list">
+                    <a href="https://discord.gg/HTkVuBUSjJ" target="_blank" class="nav-link">Join Now!</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h1 class= "main-header">Welcome to TraderPlus Log Viewer - by Sam</h1>
+            <div class="split">
+                <div class="split-container form-container">
+                    <div class="loadingscreen" id="loading-overlay">
+                        <img class ="gif" src="img/extraction-anim.gif" alt="Loading Indicator">
+                    </div>
+                    <form action="#" name="main-form" id="main-form">
+                        <div class="data-container-wrapper" id="js-first-form">
+                            <div class="data-container">
+                                <h2 class="subheader">Start by uploading a Valid traderPlus log file </h2>
+                            </div>
+                            <div class="fileUpload">
+                                <input type="file" class="upload" name="json" id="js-json-upload" accept=".log" required>
+                                <span id="js-json-upload-span" >Upload log</span>
+                            </div>
+                            <button class="big-button" type="button" id="js-check-uploaded-files">Start Extracting log information</button>
+                        </div>
+
+                        <div class="second-form data-container-wrapper hide" id="js-second-form">
+                            <div class="data-container">
+                                <h3 class="subheader">Thank you for using TraderPlus Log Viewer - by Sam</h3>
+                                <button type="button" class="small-button" id="js-reset-form">Upload a new traderPlus log</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="split-container">
+                    <div class="log-container">
+                        <div class="log-wrapper">
+                            <h3 class="log-header">Logs:</h3>
+                            <div class="logs" id="js-logs-container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="json-content-container">
+                <div class="style-wrapper hide " id="js-json-data-container">
+                </div>
+            </div>
+            
+            <div class="action-btn-wrapper hide" id="action-btn">
+                <button class="normal-button remove-margin" type="button" id="js-copy-btn"><i class="fa fa-clipboard icon-btn"></i>Copy transactions</button>
+                <input type="hidden" name="generated-json-data" id="js-generated-json-data" value>
+                <button class="normal-button remove-margin" type="button" id="js-copy-btn-sorted"><i class="fa fa-clipboard icon-btn"></i>Copy sorted by User transactions</button>
+                <input type="hidden" name="generated-json-data" id="js-generated-json-data-sorted" value>
+            </div>
+            
+            <div class="json-view" id="json-view"></div>
+        </div>
+    </body>
+</html>

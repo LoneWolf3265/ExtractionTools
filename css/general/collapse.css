@@ -6,6 +6,10 @@
     transition: height 5s ease;
 }
 
+.collapse-container-clean {
+    transition: height 5s ease;
+}
+
 .collapse-btn {
     display: flex;
     flex-direction: row;
@@ -14,6 +18,10 @@
     border-bottom: solid 1px var(--c-dark-purple);
     padding: 0.5em;
     border-radius: 10px;
+}
+
+.collapse-btn-clean {
+    cursor: pointer;
 }
 
 .collapse-btn:hover {
